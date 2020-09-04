@@ -13,13 +13,11 @@ namespace TestProjectService.Controllers
     {
 
         [HttpGet("test")]
-        public async Task<IActionResult> Test()
+        public async Task<IActionResult> Test([FromForm] IFormFile excelFile)
         {
             var logic = new Logic();
-            logic.DoStuff();
+            logic.DoStuff(excelFile);
             return Ok();
         }
-
-
     }
 }

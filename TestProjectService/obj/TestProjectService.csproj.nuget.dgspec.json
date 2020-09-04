@@ -39,6 +39,10 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "EPPlus": {
+              "target": "Package",
+              "version": "[5.3.1, )"
+            },
             "HtmlAgilityPack": {
               "target": "Package",
               "version": "[1.11.24, )"
