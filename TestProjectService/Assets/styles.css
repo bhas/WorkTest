@@ -1,0 +1,17 @@
+﻿
+
+
+
+body {
+    background: #333;
+    font-family: "Andale Mono", AndaleMono, monospace;
+    font-size: 13pt;
+}
+
+.main-container {
+    background: white;
+    width: 400px;
+    height: 600px;
+    margin: 20px;
+    padding: 20px;
+}
