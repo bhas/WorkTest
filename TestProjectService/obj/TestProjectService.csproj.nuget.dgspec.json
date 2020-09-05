@@ -10,11 +10,14 @@
         "projectUniqueName": "C:\\Work\\WorkTest\\TestProjectService\\TestProjectService.csproj",
         "projectName": "TestProjectService",
         "projectPath": "C:\\Work\\WorkTest\\TestProjectService\\TestProjectService.csproj",
-        "packagesPath": "C:\\Users\\bvi\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\bvint\\.nuget\\packages\\",
         "outputPath": "C:\\Work\\WorkTest\\TestProjectService\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\bvi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\bvint\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -39,9 +42,21 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "CoreHtmlToImage": {
+              "target": "Package",
+              "version": "[1.0.6, )"
+            },
             "EPPlus": {
               "target": "Package",
               "version": "[5.3.1, )"
+            },
+            "ExcelDataReader": {
+              "target": "Package",
+              "version": "[3.6.0, )"
+            },
+            "FreeSpire.XLS": {
+              "target": "Package",
+              "version": "[10.1.0, )"
             },
             "HtmlAgilityPack": {
               "target": "Package",
@@ -70,7 +85,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.1": {
+      "CoreHtmlToImage/1.0.6": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/CoreHtmlToImage.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/CoreHtmlToImage.dll": {}
+        }
+      },
       "EPPlus/5.3.1": {
         "type": "package",
         "dependencies": {
@@ -22,6 +31,32 @@
         },
         "runtime": {
           "lib/netstandard2.1/EPPlus.dll": {}
+        }
+      },
+      "ExcelDataReader/3.6.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/ExcelDataReader.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/ExcelDataReader.dll": {}
+        }
+      },
+      "FreeSpire.XLS/10.1.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Drawing.Common": "4.7.0",
+          "System.Text.Encoding.CodePages": "4.7.0"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Spire.License.dll": {},
+          "lib/netcoreapp3.0/Spire.Pdf.dll": {},
+          "lib/netcoreapp3.0/Spire.XLS.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Spire.License.dll": {},
+          "lib/netcoreapp3.0/Spire.Pdf.dll": {},
+          "lib/netcoreapp3.0/Spire.XLS.dll": {}
         }
       },
       "HtmlAgilityPack/1.11.24": {
@@ -1237,6 +1272,18 @@
     }
   },
   "libraries": {
+    "CoreHtmlToImage/1.0.6": {
+      "sha512": "O5TZhjxIV4T3ayZPLJqLQ/KFhu5NllrLqKi+YbKbmjLs11fPGAxrZkidYAvOSCTFqlEJ92AQX0Epb8m2Q4EH7Q==",
+      "type": "package",
+      "path": "corehtmltoimage/1.0.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "corehtmltoimage.1.0.6.nupkg.sha512",
+        "corehtmltoimage.nuspec",
+        "lib/netstandard2.0/CoreHtmlToImage.dll"
+      ]
+    },
     "EPPlus/5.3.1": {
       "sha512": "/ua0p1cA78HqT55EpyNtf3VdyncSGUkiqj+UtPT4Mb2PMqLVE5f7qn1FlmsnX41sahsqmKFr6h2/9LtWDZP30w==",
       "type": "package",
@@ -1259,6 +1306,77 @@
         "lib/netstandard2.1/EPPlus.xml",
         "license.md",
         "readme.txt"
+      ]
+    },
+    "ExcelDataReader/3.6.0": {
+      "sha512": "eXyxTwG7EEWpgQX3juZ2KcndqTqm/ydx9GXS2lUiMJU54U4h5eXdygRtVgINv0t60ezPWEb+lL7uM7Q+wm5BBA==",
+      "type": "package",
+      "path": "exceldatareader/3.6.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "exceldatareader.3.6.0.nupkg.sha512",
+        "exceldatareader.nuspec",
+        "lib/net20/ExcelDataReader.dll",
+        "lib/net20/ExcelDataReader.pdb",
+        "lib/net20/ExcelDataReader.xml",
+        "lib/net45/ExcelDataReader.dll",
+        "lib/net45/ExcelDataReader.pdb",
+        "lib/net45/ExcelDataReader.xml",
+        "lib/netstandard1.3/ExcelDataReader.dll",
+        "lib/netstandard1.3/ExcelDataReader.pdb",
+        "lib/netstandard1.3/ExcelDataReader.xml",
+        "lib/netstandard2.0/ExcelDataReader.dll",
+        "lib/netstandard2.0/ExcelDataReader.pdb",
+        "lib/netstandard2.0/ExcelDataReader.xml"
+      ]
+    },
+    "FreeSpire.XLS/10.1.0": {
+      "sha512": "CRWQGBXcyaHD8b88gqTrF/VNdG0ZRwPOn5922tLcWw8dvb27gpSo6PgSvwjDgc2NQ+muHDf1Av3AqF306NHLWw==",
+      "type": "package",
+      "path": "freespire.xls/10.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "freespire.xls.10.1.0.nupkg.sha512",
+        "freespire.xls.nuspec",
+        "lib/net20/Spire.License.dll",
+        "lib/net20/Spire.License.xml",
+        "lib/net20/Spire.Pdf.dll",
+        "lib/net20/Spire.Pdf.xml",
+        "lib/net20/Spire.XLS.dll",
+        "lib/net20/Spire.XLS.xml",
+        "lib/net40/Spire.License.dll",
+        "lib/net40/Spire.License.xml",
+        "lib/net40/Spire.Pdf.dll",
+        "lib/net40/Spire.Pdf.xml",
+        "lib/net40/Spire.XLS.dll",
+        "lib/net40/Spire.XLS.xml",
+        "lib/net46/Spire.License.dll",
+        "lib/net46/Spire.License.xml",
+        "lib/net46/Spire.Pdf.dll",
+        "lib/net46/Spire.Pdf.xml",
+        "lib/net46/Spire.XLS.dll",
+        "lib/net46/Spire.XLS.xml",
+        "lib/netcoreapp2.0/Spire.License.dll",
+        "lib/netcoreapp2.0/Spire.License.xml",
+        "lib/netcoreapp2.0/Spire.Pdf.dll",
+        "lib/netcoreapp2.0/Spire.Pdf.xml",
+        "lib/netcoreapp2.0/Spire.XLS.dll",
+        "lib/netcoreapp2.0/Spire.XLS.xml",
+        "lib/netcoreapp3.0/Spire.License.dll",
+        "lib/netcoreapp3.0/Spire.License.xml",
+        "lib/netcoreapp3.0/Spire.Pdf.dll",
+        "lib/netcoreapp3.0/Spire.Pdf.xml",
+        "lib/netcoreapp3.0/Spire.XLS.dll",
+        "lib/netcoreapp3.0/Spire.XLS.xml",
+        "lib/netstandard2.0/Spire.License.dll",
+        "lib/netstandard2.0/Spire.License.xml",
+        "lib/netstandard2.0/Spire.Pdf.dll",
+        "lib/netstandard2.0/Spire.Pdf.xml",
+        "lib/netstandard2.0/Spire.XLS.dll",
+        "lib/netstandard2.0/Spire.XLS.xml",
+        "license.txt"
       ]
     },
     "HtmlAgilityPack/1.11.24": {
@@ -4501,13 +4619,17 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "CoreHtmlToImage >= 1.0.6",
       "EPPlus >= 5.3.1",
+      "ExcelDataReader >= 3.6.0",
+      "FreeSpire.XLS >= 10.1.0",
       "HtmlAgilityPack >= 1.11.24",
       "Swashbuckle.AspNetCore >= 5.5.1"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\bvi\\.nuget\\packages\\": {}
+    "C:\\Users\\bvint\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
@@ -4515,11 +4637,14 @@
       "projectUniqueName": "C:\\Work\\WorkTest\\TestProjectService\\TestProjectService.csproj",
       "projectName": "TestProjectService",
       "projectPath": "C:\\Work\\WorkTest\\TestProjectService\\TestProjectService.csproj",
-      "packagesPath": "C:\\Users\\bvi\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\bvint\\.nuget\\packages\\",
       "outputPath": "C:\\Work\\WorkTest\\TestProjectService\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\bvi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\bvint\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4544,9 +4669,21 @@
     "frameworks": {
       "netcoreapp3.1": {
         "dependencies": {
+          "CoreHtmlToImage": {
+            "target": "Package",
+            "version": "[1.0.6, )"
+          },
           "EPPlus": {
             "target": "Package",
             "version": "[5.3.1, )"
+          },
+          "ExcelDataReader": {
+            "target": "Package",
+            "version": "[3.6.0, )"
+          },
+          "FreeSpire.XLS": {
+            "target": "Package",
+            "version": "[10.1.0, )"
           },
           "HtmlAgilityPack": {
             "target": "Package",
@@ -4575,7 +4712,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

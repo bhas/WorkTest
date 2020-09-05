@@ -12,7 +12,7 @@ namespace TestProjectService.Controllers
     public class GeneralController : ControllerBase
     {
 
-        [HttpGet("test")]
+        [HttpPost("test")]
         public async Task<IActionResult> Test([FromForm] IFormFile excelFile)
         {
             var logic = new Logic();

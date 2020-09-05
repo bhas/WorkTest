@@ -10,7 +10,7 @@
       "NETCOREAPP",
       "NETCOREAPP3_1"
     ],
-    "languageVersion": "",
+    "languageVersion": "8.0",
     "platform": "",
     "allowUnsafe": false,
     "warningsAsErrors": false,
@@ -24,7 +24,10 @@
     ".NETCoreApp,Version=v3.1": {
       "TestProjectService/1.0.0": {
         "dependencies": {
+          "CoreHtmlToImage": "1.0.6",
           "EPPlus": "5.3.1",
+          "ExcelDataReader": "3.6.0",
+          "FreeSpire.XLS": "10.1.0",
           "HtmlAgilityPack": "1.11.24",
           "Swashbuckle.AspNetCore": "5.5.1",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
@@ -308,6 +311,17 @@
           "TestProjectService.dll": {}
         }
       },
+      "CoreHtmlToImage/1.0.6": {
+        "runtime": {
+          "lib/netstandard2.0/CoreHtmlToImage.dll": {
+            "assemblyVersion": "1.0.6.0",
+            "fileVersion": "1.0.6.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/CoreHtmlToImage.dll": {}
+        }
+      },
       "EPPlus/5.3.1": {
         "dependencies": {
           "Microsoft.Extensions.Configuration.Json": "3.1.5",
@@ -330,6 +344,42 @@
         },
         "compile": {
           "lib/netstandard2.1/EPPlus.dll": {}
+        }
+      },
+      "ExcelDataReader/3.6.0": {
+        "runtime": {
+          "lib/netstandard2.0/ExcelDataReader.dll": {
+            "assemblyVersion": "3.6.0.0",
+            "fileVersion": "3.6.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/ExcelDataReader.dll": {}
+        }
+      },
+      "FreeSpire.XLS/10.1.0": {
+        "dependencies": {
+          "System.Drawing.Common": "4.7.0",
+          "System.Text.Encoding.CodePages": "4.7.1"
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Spire.License.dll": {
+            "assemblyVersion": "1.3.8.320",
+            "fileVersion": "1.3.8.320"
+          },
+          "lib/netcoreapp3.0/Spire.Pdf.dll": {
+            "assemblyVersion": "6.1.4.2330",
+            "fileVersion": "6.1.4.2330"
+          },
+          "lib/netcoreapp3.0/Spire.XLS.dll": {
+            "assemblyVersion": "10.1.4.61330",
+            "fileVersion": "10.1.4.61330"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Spire.License.dll": {},
+          "lib/netcoreapp3.0/Spire.Pdf.dll": {},
+          "lib/netcoreapp3.0/Spire.XLS.dll": {}
         }
       },
       "HtmlAgilityPack/1.11.24": {
@@ -2715,12 +2765,33 @@
       "serviceable": false,
       "sha512": ""
     },
+    "CoreHtmlToImage/1.0.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-O5TZhjxIV4T3ayZPLJqLQ/KFhu5NllrLqKi+YbKbmjLs11fPGAxrZkidYAvOSCTFqlEJ92AQX0Epb8m2Q4EH7Q==",
+      "path": "corehtmltoimage/1.0.6",
+      "hashPath": "corehtmltoimage.1.0.6.nupkg.sha512"
+    },
     "EPPlus/5.3.1": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-/ua0p1cA78HqT55EpyNtf3VdyncSGUkiqj+UtPT4Mb2PMqLVE5f7qn1FlmsnX41sahsqmKFr6h2/9LtWDZP30w==",
       "path": "epplus/5.3.1",
       "hashPath": "epplus.5.3.1.nupkg.sha512"
+    },
+    "ExcelDataReader/3.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-eXyxTwG7EEWpgQX3juZ2KcndqTqm/ydx9GXS2lUiMJU54U4h5eXdygRtVgINv0t60ezPWEb+lL7uM7Q+wm5BBA==",
+      "path": "exceldatareader/3.6.0",
+      "hashPath": "exceldatareader.3.6.0.nupkg.sha512"
+    },
+    "FreeSpire.XLS/10.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-CRWQGBXcyaHD8b88gqTrF/VNdG0ZRwPOn5922tLcWw8dvb27gpSo6PgSvwjDgc2NQ+muHDf1Av3AqF306NHLWw==",
+      "path": "freespire.xls/10.1.0",
+      "hashPath": "freespire.xls.10.1.0.nupkg.sha512"
     },
     "HtmlAgilityPack/1.11.24": {
       "type": "package",

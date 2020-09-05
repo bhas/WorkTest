@@ -53,9 +53,6 @@ C:\Work\WorkTest\TestProjectService\obj\Debug\netcoreapp3.1\TestProjectService.d
 C:\Work\WorkTest\TestProjectService\obj\Debug\netcoreapp3.1\TestProjectService.xml
 C:\Work\WorkTest\TestProjectService\obj\Debug\netcoreapp3.1\TestProjectService.pdb
 C:\Work\WorkTest\TestProjectService\obj\Debug\netcoreapp3.1\TestProjectService.genruntimeconfig.cache
-C:\Work\WorkTest\TestProjectService\obj\Debug\netcoreapp3.1\TestProjectService.csproj.CoreCompileInputs.cache
-C:\Work\WorkTest\TestProjectService\obj\Debug\netcoreapp3.1\TestProjectService.MvcApplicationPartsAssemblyInfo.cs
-C:\Work\WorkTest\TestProjectService\obj\Debug\netcoreapp3.1\TestProjectService.MvcApplicationPartsAssemblyInfo.cache
 C:\Work\WorkTest\TestProjectService\bin\Debug\netcoreapp3.1\EPPlus.dll
 C:\Work\WorkTest\TestProjectService\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
 C:\Work\WorkTest\TestProjectService\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
@@ -68,3 +65,11 @@ C:\Work\WorkTest\TestProjectService\bin\Debug\netcoreapp3.1\Microsoft.Extensions
 C:\Work\WorkTest\TestProjectService\bin\Debug\netcoreapp3.1\System.Text.Encoding.CodePages.dll
 C:\Work\WorkTest\TestProjectService\bin\Debug\netcoreapp3.1\System.Xml.XPath.XmlDocument.dll
 C:\Work\WorkTest\TestProjectService\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Text.Encoding.CodePages.dll
+C:\Work\WorkTest\TestProjectService\bin\Debug\netcoreapp3.1\ExcelDataReader.dll
+C:\Work\WorkTest\TestProjectService\bin\Debug\netcoreapp3.1\Spire.License.dll
+C:\Work\WorkTest\TestProjectService\bin\Debug\netcoreapp3.1\Spire.Pdf.dll
+C:\Work\WorkTest\TestProjectService\bin\Debug\netcoreapp3.1\Spire.XLS.dll
+C:\Work\WorkTest\TestProjectService\bin\Debug\netcoreapp3.1\CoreHtmlToImage.dll
+C:\Work\WorkTest\TestProjectService\obj\Debug\netcoreapp3.1\TestProjectService.csproj.CoreCompileInputs.cache
+C:\Work\WorkTest\TestProjectService\obj\Debug\netcoreapp3.1\TestProjectService.MvcApplicationPartsAssemblyInfo.cs
+C:\Work\WorkTest\TestProjectService\obj\Debug\netcoreapp3.1\TestProjectService.MvcApplicationPartsAssemblyInfo.cache

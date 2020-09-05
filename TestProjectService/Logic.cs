@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using CoreHtmlToImage;
+using ExcelDataReader;
 using Microsoft.AspNetCore.Http;
 using OfficeOpenXml;
+using Spire.Xls;
 
 namespace TestProjectService
 {
@@ -12,51 +15,97 @@ namespace TestProjectService
     {
         public async void DoStuff(IFormFile excelFile)
         {
-            var filePath = await SaveExcelFileToDisk(excelFile);
-            var excelInput = ParseExcelInput(filePath);
+            var excelInput = ParseExcel(excelFile);
+            var htmlFilePath = GenerateHtml(excelInput);
+            //var htmlFilePath = "Temp/3c2ea1e8.html";
+            SaveHtmlAsImage(htmlFilePath);
         }
 
-        private ExcelInput ParseExcelInput(string filePath)
+        private string SaveHtmlAsImage(string htmlFilePath)
         {
+            var filename = Path.GetFileNameWithoutExtension(htmlFilePath) + ".jpg";
+            var filePath = Path.Combine("Temp", filename);
+            
+            var converter = new HtmlConverter();
+            var html = File.ReadAllText(htmlFilePath);
+            var bytes = converter.FromHtmlString(html);
+            File.WriteAllBytes(filePath, bytes);
 
-            using var package = new ExcelPackage(new FileInfo(filePath));
-            var sheet = package.Workbook.Worksheets[0];
-            var c0 = sheet.Cells[0, 0];
-
-            return new ExcelInput();
+            return filePath;
         }
 
-        private async Task<string> SaveExcelFileToDisk(IFormFile excelFile)
+        private List<ExcelInputRow> ParseExcel(IFormFile excelFile)
+        {
+            var workbook = new Workbook();
+            workbook.LoadFromStream(excelFile.OpenReadStream());
+            var sheet = workbook.Worksheets[0];
+
+            var excelRows = new List<ExcelInputRow>();
+            for (int i = 1; i < sheet.LastRow; i++)
+            {
+                var cells = sheet.Range.Rows[i].CellList;
+                string productName = cells[1].Value;
+                if (!string.IsNullOrEmpty(productName))
+                {
+                    var quantity = cells[2].Value;
+                    var priceCoop365 = cells[3].NumberValue;
+                    var priceNetto = cells[4].NumberValue;
+                    var priceRema = cells[5].NumberValue;
+                    excelRows.Add(new ExcelInputRow(productName, quantity, priceCoop365, priceNetto, priceRema));
+                }
+            }
+
+            return excelRows;
+        }
+
+        private string GenerateHtml(List<ExcelInputRow> itemRows)
+        {
+            var mainTemplateHtml = File.ReadAllText("Assets/main-template.html");
+            var itemTemplateHtml = File.ReadAllText("Assets/item-template.html");
+
+            // generate the html content
+            var itemsHtml = "";
+            foreach (var itemRow in itemRows)
+            {
+                itemsHtml += itemTemplateHtml.Replace("{{product}}", itemRow.Name)
+                    .Replace("{{price}}", itemRow.PriceCoop365.ToString("N2"));
+            }
+            var allHtml = mainTemplateHtml.Replace("{{items}}", itemsHtml)
+                .Replace("{{logo}}", "https://eu003.kimbinocdn.com/dk/data/12/logo.png")
+                .Replace("{{itemCount}}", itemRows.Count.ToString())
+                .Replace("{{totalPrice}}", itemRows.Sum(x => x.PriceCoop365).ToString("N2"));
+
+            var filename = Guid.NewGuid().ToString("N").Substring(0, 8) + ".html";
+            var filePath = Path.Combine("Temp", filename);
+            File.WriteAllText(filePath, allHtml);
+
+            return filePath;
+        }
+
+        private async Task<string> SaveExcelToDisk(IFormFile excelFile)
         {
             var ext = Path.GetExtension(excelFile.FileName);
-            var filename = Guid.NewGuid().ToString("N") + ext;
+            var filename = Guid.NewGuid().ToString("N").Substring(0, 8) + ext;
             var filePath = Path.Combine("Temp", filename);
-            Directory.CreateDirectory(filePath);
-
-            await using var fileStream = new FileStream(filePath, FileMode.Create);
-            await excelFile.CopyToAsync(fileStream);
-
+            await using (var fileStream = new FileStream(filePath, FileMode.Create))
+            {
+                await excelFile.CopyToAsync(fileStream);
+            }
             return filePath;
         }
 
     }
 
-    public class ExcelInput
-    {
-        public string ImagePath;
-        public List<ExcelInputRow> ProductRows = new List<ExcelInputRow>();
-    }
-
     public class ExcelInputRow
     {
         public string Name { get; }
-        public float PriceCoop365 { get; }
-        public float PriceNetto { get; }
-        public float PriceRema { get; }
+        public double PriceCoop365 { get; }
+        public double PriceNetto { get; }
+        public double PriceRema { get; }
 
-        public ExcelInputRow(string name, float priceCoop365, float priceNetto, float priceRema)
+        public ExcelInputRow(string productName, string quantity, double priceCoop365, double priceNetto, double priceRema)
         {
-            Name = name;
+            Name = $"{productName} {quantity}";
             PriceCoop365 = priceCoop365;
             PriceNetto = priceNetto;
             PriceRema = priceRema;
